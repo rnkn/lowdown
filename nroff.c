@@ -844,10 +844,10 @@ rndr_blockquote(struct nroff *st, struct bnodeq *obq,
     struct bnodeq *bq)
 {
 
-	if (bqueue_block(st, obq, ".RS") == NULL)
+	if (bqueue_block(st, obq, ".QS") == NULL)
 		return 0;
 	TAILQ_CONCAT(obq, bq, entries);
-	return bqueue_block(st, obq, ".RE") != NULL;
+	return bqueue_block(st, obq, ".QE") != NULL;
 }
 
 static int
